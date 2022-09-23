@@ -1,0 +1,9 @@
+version: "2"
+services:
+  nginx-js:
+    container_name: rensource_admin
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+     - 82:82
