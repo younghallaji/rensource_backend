@@ -250,13 +250,15 @@ if (categoryTable != undefined && categoryTable != null) {
         withCredentials: false
     }, {header})
     .then(executives =>{
+        let arraykeys = Object.keys(executives.data.data)
+        console.log(executives.data.data.reverse())
         for(let executive of executives.data.data) {
-            let splitDate = executive.dateCreated.split("T");
+            let splitDate = executive.executiveTeamCategory.dateCreated.split("T");
             let date = splitDate[0]
             let time = splitDate[1].split(".")[0];
             let datetime = date + " " + time
            output +=  `<tr>
-                            <td>${executive.executiveTeamCategoryName}</td>
+                            <td>${executive.executiveTeamCategory.executiveTeamCategoryName}</td>
                             <td>${datetime}</td>
                             <td>
                                 <div class="g-2">
@@ -385,7 +387,7 @@ for (const role of roles) {
 }
 
 for (const category of categories) {
-  catOutput += `<option value=${category.id}>${category.executiveTeamCategoryName}</option>`
+  catOutput += `<option value=${category.executiveTeamCategory.id}>${category.executiveTeamCategory.executiveTeamCategoryName}</option>`
 }
 selectRole.innerHTML = roleOutput;
 selectCategory.innerHTML = catOutput
