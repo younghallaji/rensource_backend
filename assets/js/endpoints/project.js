@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'http://18.193.182.151:8080/api/v1/'
+const url = 'https://18.193.182.151:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createProject = document.getElementById('createProject');
 if (createProject != undefined) {
@@ -38,7 +38,7 @@ if (createProject != undefined) {
                         SuccessAlert('success', 'Success', res.data.statusMessage)
                         document.getElementById('createProjectBtn').innerHTML = 'Submit';
                         createProject.classList.remove('was-validated');
-                        // window.location.href='add-press'
+                        createProject.reset()
                     } else if(res.data.statusCode===400){
                         document.getElementById('createProjectBtn').innerHTML = 'Submit';
                         createProject.classList.remove('was-validated');

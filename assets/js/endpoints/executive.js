@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
         confirmButtonText: 'Ok',
     })
 }
-const url = 'http://18.193.182.151:8080/api/v1/'
+const url = 'https://18.193.182.151:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const addExecutive = document.getElementById('executive-role');
 if (addExecutive != undefined) {
@@ -39,18 +39,21 @@ if (addExecutive != undefined) {
                         SuccessAlert('success', 'Success', res.data.statusMessage)
                         document.getElementById('addExecutiveBtn').innerHTML = 'Submit';
                         addExecutive.classList.remove('was-validated');
+                        addExecutive.reset()
                     } else if(res.data.statusCode===400){
                         document.getElementById('addExecutiveBtn').innerHTML = 'Submit';
                         addExecutive.classList.remove('was-validated');
                         SuccessAlert('error', 'Error', res.data.statusMessage)
+                        addExecutive.reset()
                     }else {
                         document.getElementById('addExecutiveBtn').innerHTML = 'Submit';
                         addExecutive.classList.remove('was-validated');
                         SuccessAlert('error', 'Error', res.data.statusMessage)
+                        addExecutive.reset()
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', res.data.statusMessage)
+                    SuccessAlert('error', 'Error', err.message)
                     document.getElementById('addExecutiveBtn').innerHTML = 'Submit';})
                     addExecutive.classList.remove('was-validated');
             
@@ -423,14 +426,17 @@ if (createTeam != undefined) {
                         SuccessAlert('success', 'Success', res.data.statusMessage)
                         document.getElementById('createTeamBtn').innerHTML = 'Submit';
                         createTeam.classList.remove('was-validated');
+                        createTeam.reset()
                     } else if(res.data.statusCode===400){
                         document.getElementById('createTeamBtn').innerHTML = 'Submit';
                         createTeam.classList.remove('was-validated');
                         SuccessAlert('error', 'Error', res.data.statusMessage)
+                        createTeam.reset()
                     }else {
                         document.getElementById('createTeamBtn').innerHTML = 'Submit';
                         createTeam.classList.remove('was-validated');
                         SuccessAlert('error', 'Error', res.data.statusMessage)
+                        createTeam.reset()
                     }
                 })
                 .catch(err=>{

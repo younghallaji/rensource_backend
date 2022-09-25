@@ -1,4 +1,4 @@
-const url = 'http://18.193.182.151:8080/api/v1/'
+const url = 'https://18.193.182.151:4431/api/v1/'
 
 
 function getadmin(){
@@ -13,28 +13,33 @@ function getadmin(){
 	}, {header})
 	.then(admins =>{
 		let output = '';
-		admins.data.data.forEach(admin => {
-		output += ` 
-			<tr>
-			   <td>${admin.firstName} ${admin.middleName} ${admin.lastName}</td>
-			   <td>${admin.emailAddress}</td>
-			   <td>${admin.phoneNumber}</td>
-			   <td>${admin.dateCreated}</td>
-			   <td>
-			   <div class="g-2">
-			   <a class="btn text-primary btn-sm"
-				   data-bs-toggle="tooltip"
-				   data-bs-original-title="Edit"><span
-					   class="fe fe-edit fs-14"></span></a>
-			   <a  class="delete btn text-danger btn-sm"
-				   data-bs-toggle="tooltip"
-				   data-bs-original-title="Delete"><span id=${admin.id}
-					   class="delete fe fe-trash-2 fs-14"></span></a>
-		   </div>  
-			   </td>
-		   </tr>`;
-		   outputDiv.innerHTML = output;
-		});
+		if (admins.data.data != null) {
+			admins.data.data.forEach(admin => {
+				output += ` 
+					<tr>
+					   <td>${admin.firstName} ${admin.middleName} ${admin.lastName}</td>
+					   <td>${admin.emailAddress}</td>
+					   <td>${admin.phoneNumber}</td>
+					   <td>${admin.dateCreated}</td>
+					   <td>
+					   <div class="g-2">
+					   <a class="btn text-primary btn-sm"
+						   data-bs-toggle="tooltip"
+						   data-bs-original-title="Edit"><span
+							   class="fe fe-edit fs-14"></span></a>
+					   <a  class="delete btn text-danger btn-sm"
+						   data-bs-toggle="tooltip"
+						   data-bs-original-title="Delete"><span id=${admin.id}
+							   class="delete fe fe-trash-2 fs-14"></span></a>
+				   </div>  
+					   </td>
+				   </tr>`;
+				   outputDiv.innerHTML = output;
+				});
+		} else {
+			outputDiv.innerHTML = '<tr><td colspan=5>Data Empty</td>'
+		}
+		
 	})
 	.catch(err=>alert(err));
 }

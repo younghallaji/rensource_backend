@@ -16,7 +16,7 @@ if (resetPassword != undefined) {
             resetPassword.classList.add('was-validated'); 
             axios({
               method: 'post',
-              url: 'http://18.193.182.151:8080/api/v1/Users/ForgotPassword',
+              url: 'https://18.193.182.151:4431/api/v1/Users/ForgotPassword',
               data: {
                   emailAddress: email.value,
                 }
@@ -73,7 +73,7 @@ if (changePassword != undefined) {
             console.log(code.value, password.value, confirmPassword.value)
             axios({
               method: 'post',
-              url: 'http://18.193.182.151:8080/api/v1/Users/ChangePassword',
+              url: 'https://18.193.182.151:4431/api/v1/Users/ChangePassword',
               data: {
                   code: code.value,
                   password: password.value,

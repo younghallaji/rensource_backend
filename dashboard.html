@@ -103,7 +103,7 @@
                                     <!-- SIDE-MENU -->
                                     <div class="dropdown d-flex profile-1">
                                         <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                            <img src="assets/images/users/21.jpg" alt="profile-user" class="avatar  profile-user brround cover-image">
+                                            <img src="assets/images/brand/favicon.png" alt="profile-user" class="avatar  profile-user brround cover-image">
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                             <div class="drop-heading">
@@ -176,7 +176,7 @@
                                                 <div class="d-flex">
                                                     <div class="mt-2">
                                                         <h6 class="">Total Executive</h6>
-                                                        <h2 class="mb-0 number-font">4</h2>
+                                                        <h2 class="mb-0 number-font" id="totalExec"></h2>
                                                     </div>
                                                     <div class="ms-auto">
                                                         <div class="chart-wrapper mt-1">
@@ -193,8 +193,8 @@
                                             <div class="card-body">
                                                 <div class="d-flex">
                                                     <div class="mt-2">
-                                                        <h6 class="">Total Press Release</h6>
-                                                        <h2 class="mb-0 number-font">67</h2>
+                                                        <h6 class="">Total News</h6>
+                                                        <h2 class="mb-0 number-font" id="totalNews"></h2>
                                                     </div>
                                                     <div class="ms-auto">
                                                         <div class="chart-wrapper mt-1">
@@ -212,7 +212,7 @@
                                                 <div class="d-flex">
                                                     <div class="mt-2">
                                                         <h6 class="">Total Administrator</h6>
-                                                        <h2 class="mb-0 number-font">7</h2>
+                                                        <h2 class="mb-0 number-font" id="totalAdmin"></h2>
                                                     </div>
                                                     <div class="ms-auto">
                                                         <div class="chart-wrapper mt-1">
@@ -230,7 +230,7 @@
                                                 <div class="d-flex">
                                                     <div class="mt-2">
                                                         <h6 class="">Total Projects</h6>
-                                                        <h2 class="mb-0 number-font">5</h2>
+                                                        <h2 class="mb-0 number-font" id="totalProject"></h2>
                                                     </div>
                                                     <div class="ms-auto">
                                                         <div class="chart-wrapper mt-1">
@@ -278,39 +278,13 @@
     <script src="assets/plugins/bootstrap/js/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- SPARKLINE JS-->
-    <script src="assets/js/jquery.sparkline.min.js"></script>
-
-    <!-- CHART-CIRCLE JS-->
-    <script src="assets/js/circle-progress.min.js"></script>
-
-    <!-- C3 CHART JS -->
-    <script src="assets/plugins/charts-c3/d3.v5.min.js"></script>
-    <script src="assets/plugins/charts-c3/c3-chart.js"></script>
-
-    <!-- INPUT MASK JS-->
-    <script src="assets/plugins/input-mask/jquery.mask.min.js"></script>
+    
 
     <!-- SIDE-MENU JS -->
     <script src="assets/plugins/sidemenu/sidemenu.js"></script>
 
-    <!-- INTERNAL SELECT2 JS -->
-    <script src="assets/plugins/select2/select2.full.min.js"></script>
-
-    <!-- DATA TABLE JS-->
-    <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-    <script src="assets/plugins/datatable/js/dataTables.buttons.min.js"></script>
-    <script src="assets/plugins/datatable/js/buttons.bootstrap5.min.js"></script>
-    <script src="assets/plugins/datatable/js/jszip.min.js"></script>
-    <script src="assets/plugins/datatable/pdfmake/pdfmake.min.js"></script>
-    <script src="assets/plugins/datatable/pdfmake/vfs_fonts.js"></script>
-    <script src="assets/plugins/datatable/js/buttons.html5.min.js"></script>
-    <script src="assets/plugins/datatable/js/buttons.print.min.js"></script>
-    <script src="assets/plugins/datatable/js/buttons.colVis.min.js"></script>
-    <script src="assets/plugins/datatable/dataTables.responsive.min.js"></script>
-    <script src="assets/plugins/datatable/responsive.bootstrap5.min.js"></script>
-    <script src="assets/js/table-data.js"></script>
+    
+    
 
     <!-- SIDEBAR JS -->
     <script src="assets/plugins/sidebar/sidebar.js"></script>
@@ -329,6 +303,7 @@
     <!-- CUSTOM JS -->
     <script src="assets/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/endpoints/dashboard.js"></script>
     <script src="assets/js/side-menu-open.js"></script>
 
     <!-- <script>

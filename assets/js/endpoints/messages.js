@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'http://18.193.182.151:8080/api/v1/'
+const url = 'https://18.193.182.151:4431/api/v1/'
 
 function getmessage(){
 	const outputDiv = document.getElementById('AllMessages');

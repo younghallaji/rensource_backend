@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'http://18.193.182.151:8080/api/v1/'
+const url = 'https://18.193.182.151:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createPress = document.getElementById('createPress');
 if (createPress != undefined) {
@@ -60,7 +60,7 @@ if (createPress != undefined) {
     })
 }
 
-// GET PRESS RELEASE
+// GET News
 
 let pressReleaseList = document.getElementById('pressReleaseList')
 if (pressReleaseList != undefined && pressReleaseList != null) {
@@ -108,7 +108,7 @@ if (pressReleaseList != undefined && pressReleaseList != null) {
     })
 }
 
-// Delete Press Release
+// Delete News
 
 $('#pressReleaseList').on('click', '.delete-team', function() {
     if (confirm('Are You Sure')) {
@@ -161,7 +161,7 @@ function pressDetails(){
     })
 }
 
-// Update press Release
+// Update News
 
 let updatePress = document.getElementById('updatePress');
 if (updatePress != undefined) {
