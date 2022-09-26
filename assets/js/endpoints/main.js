@@ -1,4 +1,4 @@
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 
 
 function getadmin(){

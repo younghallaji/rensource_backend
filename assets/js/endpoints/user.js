@@ -1,4 +1,5 @@
 // Reset Password
+const url = ''
 const resetPassword = document.getElementById('resetPassword');
 const resetBtn = document.getElementById('resetPasswordBtn');
 let email = document.getElementById('email');
@@ -16,7 +17,7 @@ if (resetPassword != undefined) {
             resetPassword.classList.add('was-validated'); 
             axios({
               method: 'post',
-              url: 'https://18.193.182.151:4431/api/v1/Users/ForgotPassword',
+              url: 'https://rensource.energy:4431/api/v1/Users/ForgotPassword',
               data: {
                   emailAddress: email.value,
                 }
@@ -33,7 +34,7 @@ if (resetPassword != undefined) {
                     showCancelButton: false,
                     confirmButtonText: 'Ok',
                   })
-                  window.location = 'set-password'
+                  window.location = 'set-password.html'
                 }else {
                   resetBtn.innerHTML = 'submit'
                   resetBtn.removeAttribute('disabled')
@@ -73,7 +74,7 @@ if (changePassword != undefined) {
             console.log(code.value, password.value, confirmPassword.value)
             axios({
               method: 'post',
-              url: 'https://18.193.182.151:4431/api/v1/Users/ChangePassword',
+              url: 'https://rensource.energy:4431/api/v1/Users/ChangePassword',
               data: {
                   code: code.value,
                   password: password.value,
@@ -92,7 +93,7 @@ if (changePassword != undefined) {
                     showCancelButton: false,
                     confirmButtonText: 'Ok',
                   })
-                  window.location = 'dashboard'
+                  window.location = 'dashboard.html'
                 }else {
                   changePasswordBtn.innerHTML = 'submit'
                   changePasswordBtn.removeAttribute('disabled')

@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createPress = document.getElementById('createPress');
 if (createPress != undefined) {
@@ -41,7 +41,7 @@ if (createPress != undefined) {
                         SuccessAlert('success', 'Success', res.data.statusMessage)
                         document.getElementById('createPressBtn').innerHTML = 'Submit';
                         createPress.classList.remove('was-validated');
-                        window.location.href='add-press'
+                        window.location.href='add-press.html'
                     } else if(res.data.statusCode===400){
                         document.getElementById('createPressBtn').innerHTML = 'Submit';
                         createPress.classList.remove('was-validated');
@@ -53,7 +53,7 @@ if (createPress != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', err.statusMessage)
+                    SuccessAlert('error', 'Error', err.statusText)
                     document.getElementById('createPressBtn').innerHTML = 'Submit';})
                     createPress.classList.remove('was-validated');
         }
@@ -120,7 +120,7 @@ $('#pressReleaseList').on('click', '.delete-team', function() {
             success: function (response) {
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'press-list';
+                    window.location = 'press-list.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }
@@ -157,6 +157,7 @@ function pressDetails(){
             $('textarea').text(response.data.content)
             $('#previousImage').attr('src', response.data.image)
             $('#tags').val(response.data.tags)
+            $('#date').val(response.data.dateCreated)
         }
     })
 }
@@ -208,7 +209,7 @@ if (updatePress != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', err.statusMessage)
+                    SuccessAlert('error', 'Error', err.statusText)
                     document.getElementById('updatePressBtn').innerHTML = 'Submit';})
                     updatePress.classList.remove('was-validated');
             

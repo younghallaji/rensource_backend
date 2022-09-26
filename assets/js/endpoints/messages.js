@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 
 function getmessage(){
 	const outputDiv = document.getElementById('AllMessages');
@@ -62,7 +62,7 @@ $('#AllMessages').on('click', '.delete', function() {
                 console.log(response)
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location.href = 'messages'
+                    window.location.href = 'messages.html'
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                     window.location = 'messages';

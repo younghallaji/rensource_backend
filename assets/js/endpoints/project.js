@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createProject = document.getElementById('createProject');
 if (createProject != undefined) {
@@ -117,7 +117,7 @@ $('#projectList').on('click', '.delete-team', function() {
             success: function (response) {
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'project-list';
+                    window.location = 'project-list.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }

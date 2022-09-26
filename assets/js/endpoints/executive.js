@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
         confirmButtonText: 'Ok',
     })
 }
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const addExecutive = document.getElementById('executive-role');
 if (addExecutive != undefined) {
@@ -113,10 +113,10 @@ $('#roles').on('click', '.delete', function() {
                 console.log(response)
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    alert(response.statusMessage);
+                    window.location = 'executive-role.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
-                    window.location = 'executive-role';
+                    window.location = 'executive-role.html';
                 }
             }
         })
@@ -178,7 +178,7 @@ if (updateForm != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', res.data.statusMessage)
+                    SuccessAlert('error', 'Error', err.data.statusText)
                     document.getElementById('updateFormBtn').innerHTML = 'Submit';})
                     updateForm.classList.remove('was-validated');
             
@@ -218,14 +218,17 @@ if (createCategory != undefined) {
                     SuccessAlert('success', 'Success', res.data.statusMessage)
                     document.getElementById('createCategoryBtn').innerHTML = 'Submit';
                     createCategory.classList.remove('was-validated');
+                    createCategory.reset()
                 } else if(res.data.statusCode===400){
                     document.getElementById('createCategoryBtn').innerHTML = 'Submit';
                     createCategory.classList.remove('was-validated');
                     SuccessAlert('error', 'Error', res.data.statusMessage)
+                    createCategory.reset()
                 }else {
                     document.getElementById('createCategoryBtn').innerHTML = 'Submit';
                     createCategory.classList.remove('was-validated');
                     SuccessAlert('error', 'Error', res.data.statusMessage)
+                    createCategory.reset()
                 }
             })
             .catch(err=>{
@@ -294,7 +297,7 @@ $('#categoryTable').on('click', '.delete', function() {
                 console.log(response)
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'executive-category';
+                    window.location = 'executive-category.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }
@@ -359,7 +362,7 @@ if (updateCat != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', res.data.statusMessage)
+                    SuccessAlert('error', 'Error', err.data.statusText)
                     document.getElementById('updateCatBtn').innerHTML = 'Update';})
                     updateCat.classList.remove('was-validated');
             
@@ -440,7 +443,7 @@ if (createTeam != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', err.statusMessage)
+                    SuccessAlert('error', 'Error', err.statusText)
                     document.getElementById('createTeamBtn').innerHTML = 'Submit';})
                     createTeam.classList.remove('was-validated');
             
@@ -505,7 +508,7 @@ $('#execTeam').on('click', '.delete-team', function() {
             success: function (response) {
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'all-executive';
+                    window.location = 'all-executive.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }
@@ -573,7 +576,7 @@ if (updateTeam != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', err.statusMessage)
+                    SuccessAlert('error', 'Error', err.statusText)
                     document.getElementById('updateTeamBtn').innerHTML = 'Submit';})
                     updateTeam.classList.remove('was-validated');
             

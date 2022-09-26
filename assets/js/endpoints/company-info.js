@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
 	})
 }
 
-const url = "https://18.193.182.151:4431/api/v1/"
+const url = "https://rensource.energy:4431/api/v1/"
 
 var forms = document.getElementsByClassName('needs-validation');
 var validation = Array.prototype.filter.call(forms, function(form) {

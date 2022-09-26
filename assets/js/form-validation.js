@@ -14,7 +14,7 @@ const loginBtn = document.getElementById('loginBtn');
           form.classList.add('was-validated'); 
           axios({
             method: 'post',
-            url: 'https://18.193.182.151:4431/api/v1/Users/UserLogin',
+            url: 'https://rensource.energy:4431/api/v1/Users/UserLogin',
             data: {
                 emailAddress: email.value,
                 password: password.value,
@@ -43,7 +43,7 @@ const loginBtn = document.getElementById('loginBtn');
               sessionStorage.setItem('phoneNumber', res.data.data.phoneNumber);
               sessionStorage.setItem('roleId', res.data.data.userRole.roleId);
               if (res.data.isActive = true) {
-                window.location.href='dashboard'
+                window.location.href='dashboard.html'
               } else {
                 swal({
                   title: 'Error Logining',

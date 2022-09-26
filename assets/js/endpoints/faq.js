@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createFaq = document.getElementById('createFaq');
 if (createFaq != undefined) {
@@ -40,6 +40,7 @@ if (createFaq != undefined) {
                         SuccessAlert('success', 'Success', res.data.statusMessage)
                         document.getElementById('createFaqBtn').innerHTML = 'Submit';
                         createFaq.classList.remove('was-validated');
+                        createFaq.reset()
                         // window.location.href='add-press'
                     } else if(res.data.statusCode===400){
                         document.getElementById('createFaqBtn').innerHTML = 'Submit';
@@ -108,7 +109,7 @@ $('#faq-list').on('click', '.delete-team', function() {
             success: function (response) {
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'faq-list';
+                    window.location = 'faq-list.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }

@@ -8,7 +8,7 @@ function SuccessAlert(type, title, message){
     })
 }
 
-const url = 'https://18.193.182.151:4431/api/v1/'
+const url = 'https://rensource.energy:4431/api/v1/'
 const addedby = sessionStorage.getItem('id');
 const createPartner = document.getElementById('createPartner');
 if (createPartner != undefined) {
@@ -107,7 +107,7 @@ $('#partners').on('click', '.delete-team', function() {
             success: function (response) {
                 if (response.statusCode == 200) {
                     SuccessAlert('success', 'Success', response.statusMessage)
-                    window.location = 'partner-list';
+                    window.location = 'partner-list.html';
                 } else {
                     SuccessAlert('error', 'Error', response.statusMessage)
                 }
@@ -164,7 +164,7 @@ if (updatePartner != undefined) {
                         document.getElementById('updatePartnerBtn').innerHTML = 'Submit';
                         document.getElementById('updatePartnerBtn').setAttribute('disabled', 'disabled')
                         updatePartner.classList.remove('was-validated');
-                        window.location.href='add-partner'
+                        window.location.href='add-partner.html'
                     } else if(res.data.statusCode===400){
                         document.getElementById('updatePartnerBtn').innerHTML = 'Submit';
                         document.getElementById('updatePartnerBtn').removeAttribute('disabled')
@@ -178,7 +178,7 @@ if (updatePartner != undefined) {
                     }
                 })
                 .catch(err=>{
-                    SuccessAlert('error', 'Error', err.statusMessage)
+                    SuccessAlert('error', 'Error', err.statusText)
                     document.getElementById('updatePartnerBtn').innerHTML = 'Submit';})
                     document.getElementById('updatePartnerBtn').removeAttribute('disabled')
                     updatePartner.classList.remove('was-validated');
